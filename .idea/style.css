@@ -1,0 +1,282 @@
+:root {
+    /* CSS HEX */
+    --dark: #273b22;
+    --light: #fffefe;
+    --accent: #855849;
+    --link: #a8705c;
+    --max-site-width: maxwidth;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.site-width {
+    max-width: var(--max-site-width);
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+nav {
+    display: block;
+    padding: 10px 0;
+}
+
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: center;
+}
+
+nav > ul > li a {
+    color: blanchedalmond;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    border-radius: 2px;
+    display: block;
+}
+
+nav > ul > li a:hover {
+    color: black;
+    background-color: whitesmoke;
+}
+
+main {
+    margin-left: 150px;
+    margin-right: 150px;
+    padding-top: 2em;
+    max-width: var(--max-site-width);
+}
+
+body > header {
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 1em 0;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+hr {
+    width: 100%;
+}
+
+section {
+    margin-bottom: 3em;
+}
+
+section > header {
+    margin-bottom: 1em;
+}
+
+
+.flex-container > div > img {
+    padding: 10px;
+    padding-left: 0px;
+}
+
+figure {
+    padding-left: 10px;
+}
+
+
+
+img > figure {
+    display: below
+}
+
+
+.flex-container {
+    display:flex;
+    margin: 10px;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+
+div.inventory {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: inline-flex;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+.flex-container > div > ul {
+    padding-left: 25px;
+}
+
+.flex-container > div > h3 {
+    color: #a8705c;
+}
+
+
+footer {
+    color: black;
+    text-align: center;
+}
+
+/* NEW/copied from lab INFORMATION */
+
+.cards {
+    display: flex;
+    width: 50%;
+    /*grid-template-columns: repeat(auto-fit, minmax(300px, auto));*/
+    row-gap: 1em;
+    column-gap: 1em;
+    margin-right: 3em 0;
+    margin-left: 3em 0;
+    margin-bottom: 3em 0;
+}
+
+.cards > div > section > figure > img {
+    min-width: 100%;
+}
+/* Have the images take up 100% of the width of their container */
+
+.content {
+    display: flex;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.content p:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+.content > figure {
+    min-height: 300px;
+}
+
+.content > figure > img {
+    width: 100%;
+    height: 100%;
+    /* Cover will scale up to the bounds of its container */
+    object-fit: cover;
+
+}
+
+.flex-1 {
+    flex: 1
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.card > figure  {
+    /* Give the figure a height */
+    height: 300px;
+}
+
+/* ======== END: CARD SET UP ======== */
+
+/* ======== START: CARD STYLING ======== */
+.card {
+    background-color: white;
+    color: var(--dark);
+    transition: transform .4s ease-in-out;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card__info {
+    padding: 20px;
+    font-size: small;
+}
+
+.card__info > header {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* ======== END: CARD STYLING ======== */
+
+/* ======== START: BUTTON STYLING ========= */
+.btn {
+    padding: 20px;
+    text-decoration: none;
+    color: var(--light);
+    background-color: var(--link);
+    display: block;
+    text-align: center;
+    font-size: 1.25em;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    opacity: .8;
+}
+/* ======== END: BUTTON STYLING ========= */
+
+.flex-3 {
+    object-fit: auto;
+}
+
+form {
+    max-width: 600px;
+    background-color: white;
+    padding: 2em;
+    margin: 30px auto;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 0px 25px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 25px -11px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 25px -11px rgba(0,0,0,0.75);
+}
+
+form > header {
+    color: var(--dark);
+    margin-bottom: 20px;
+    font-weight: bolder;
+    opacity: .4;
+}
+
+form > label {
+    color: var(--accent);
+    font-weight: bold;
+    font-size: .9em;
+    display: block;
+}
+
+
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .card {
+        flex-direction: column;
+    }
+    .content {
+        flex-direction: column;
+    }
+    .cards {
+        flex-direction: column;
+        width: 100%;
+    }
+    .inventory {
+        flex-direction: column;
+    }
+    nav > ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
